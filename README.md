@@ -164,3 +164,11 @@ Crie nova request HTTP, coloque a URL e escolha o método
 ```
 
 ```
+
+### Créditos
+
+Atividade feita por
+
+- Luan @lzn1996
+- Rafael @rrafaelc
+- Wendel @WendelBitencourt
