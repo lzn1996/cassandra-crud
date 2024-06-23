@@ -55,23 +55,23 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
    ```sh
          CREATE KEYSPACE cass  WITH replication = {'class': 'SimpleStrategy','replication_factor': 1 };
 
-     use cas;
+     use cass;
 
      CREATE TABLE users (id UUID PRIMARY KEY,email TEXT,name TEXT);
 
    ```
 
-## Lembre-se de que o nome de keyspace que vc usar, deverá ser alterado também no index.js
+   --- Lembre-se de que o nome de keyspace que vc usar, deverá ser alterado também no index.js
 
-Por exemplo se eu criei o keyspace cass, o código deve ser assim:
+   Por exemplo se eu criei o keyspace cass, o código deve ser assim:
 
-      ```sh
-      const client = new cassandra.Client({
-      contactPoints: ["localhost"],
-      localDataCenter: "datacenter1",
-      keyspace: "cass",                                  // NOME AQUI //
-    });
-      ```
+   ```sh
+   const client = new cassandra.Client({
+   contactPoints: ["localhost"],
+   localDataCenter: "datacenter1",
+   keyspace: "cass",                                  // NOME AQUI //
+   });
+   ```
 
 5. **Execute a aplicação**
 
