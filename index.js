@@ -2,10 +2,11 @@ const express = require("express");
 const cassandra = require("cassandra-driver");
 const { v4: uuidv4 } = require("uuid");
 const app = express();
+
 const client = new cassandra.Client({
   contactPoints: ["localhost"],
   localDataCenter: "datacenter1",
-  keyspace: "mykeyspace",
+  keyspace: "cass",
 });
 
 app.use(express.json());
@@ -96,5 +97,5 @@ app.delete("/users/:id", async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+  console.log("Server rodando na porta 3000");
 });

@@ -17,8 +17,8 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
    Clone o repositório para sua máquina local:
 
    ```sh
-   git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DO_REPOSITORIO>
+   git clone <https://github.com/lzn1996/cassandra-crud.git>
+   cd <cassandra-crud>
    ```
 
 2. **Instale as dependências**
@@ -47,15 +47,40 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
 
    O servidor estará rodando em [http://localhost:3000](http://localhost:3000).
 
+5. **Abra uma segunda aba no terminal**
+   Agora é preciso conversar com o CQLSH (Cassandra Query Language SHell) para poder criar o KEYSPACE e as Tabelas à serem manipuladas
+
+   Use o comando abaixo para conseguir acesso ao CQLSH pela CLI
+
+   ```sh
+   docker exec -it cassandra-container cqlsh
+   ```
+
+   Após isso estará disponível o shell do CQL, então, iremos criar o KEYSPACE (que é o container dos dados, onde as tabelas estarão)
+   Iremos entrar nele, e depois iremos estar habilitados à criação da tabela users, que é a tabela onde o CRUD será feito
+
+   Para criar o KEYSPACE, acessar ele e Criar as tabelas (lembre-se do ponto e vírgula), use:
+
+   ```sh
+         CREATE KEYSPACE cass  WITH replication = {'class': 'SimpleStrategy','replication_factor': 1 };
+
+     use cas;
+
+     CREATE TABLE users (id UUID PRIMARY KEY,email TEXT,name TEXT);
+
+   ```
+
 ### Usando o Postman
 
 Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman em [Postman](https://www.postman.com/downloads/).
+
+Crie nova request HTTP, coloque a URL e escolha o método
 
 ### Endpoints
 
 1. **Criar um usuário**
 
-   - **Endpoint**: `POST /users`
+   - **Endpoint**: `POST http://localhost:3000/users`
    - **Descrição**: Cria um novo usuário.
    - **Exemplo de corpo da requisição**:
 
@@ -76,7 +101,7 @@ Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman e
 
 2. **Listar usuários**
 
-   - **Endpoint**: `GET /users`
+   - **Endpoint**: `GET http://localhost:3000/users`
    - **Descrição**: Retorna uma lista de todos os usuários.
    - **Resposta de sucesso**:
 
@@ -92,7 +117,7 @@ Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman e
 
 3. **Atualizar um usuário**
 
-   - **Endpoint**: `PUT /users/:id`
+   - **Endpoint**: `PUT http://localhost:3000/users/:id`
    - **Descrição**: Atualiza as informações de um usuário.
    - **Exemplo de corpo da requisição**:
 
@@ -113,7 +138,7 @@ Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman e
 
 4. **Excluir um usuário**
 
-   - **Endpoint**: `DELETE /users/:id`
+   - **Endpoint**: `DELETE http://localhost:3000/users/users/:id`
    - **Descrição**: Exclui um usuário.
    - **Resposta de sucesso**:
 
@@ -122,5 +147,3 @@ Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman e
        "message": "Usuário excluído com sucesso"
      }
      ```
-
-Siga esses passos para configurar e executar o CRUD com Cassandra. Use o Postman para testar os endpoints conforme necessário.
