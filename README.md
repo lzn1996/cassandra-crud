@@ -170,5 +170,5 @@ Crie nova request HTTP, coloque a URL e escolha o método
 Atividade feita por
 
 - Luan [Perfil do Luan](https://github.com/lzn1996)
-- Rafael [Perfil do Rafaek](https://github.com/rrafaelc)
+- Rafael [Perfil do Rafael](https://github.com/rrafaelc)
 - Wendel [Perfil do Wendel](https://github.com/WendelBitencourt)
