@@ -37,17 +37,7 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
    docker run --name cassandra-container -p 9042:9042 -d cassandra:latest
    ```
 
-4. **Execute a aplicação**
-
-   Inicie o servidor Node.js:
-
-   ```sh
-   node index.js
-   ```
-
-   O servidor estará rodando em [http://localhost:3000](http://localhost:3000).
-
-5. **Abra uma segunda aba no terminal**
+4. **Abra uma segunda aba no terminal**
    Agora é preciso conversar com o CQLSH (Cassandra Query Language SHell) para poder criar o KEYSPACE e as Tabelas à serem manipuladas
 
    Use o comando abaixo para conseguir acesso ao CQLSH pela CLI
@@ -70,6 +60,28 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
 
    ```
 
+## Lembre-se de que o nome de keyspace que vc usar, deverá ser alterado também no index.js
+
+Por exemplo se eu criei o keyspace cass, o código deve ser assim:
+
+      ```sh
+      const client = new cassandra.Client({
+      contactPoints: ["localhost"],
+      localDataCenter: "datacenter1",
+      keyspace: "cass",                                  // NOME AQUI //
+    });
+      ```
+
+5. **Execute a aplicação**
+
+   Inicie o servidor Node.js:
+
+   ```sh
+   node index.js
+   ```
+
+   O servidor estará rodando em [http://localhost:3000](http://localhost:3000).
+
 ### Usando o Postman
 
 Para testar os endpoints, você pode usar o Postman. Baixe e instale o Postman em [Postman](https://www.postman.com/downloads/).
@@ -80,70 +92,74 @@ Crie nova request HTTP, coloque a URL e escolha o método
 
 1. **Criar um usuário**
 
-   - **Endpoint**: `POST http://localhost:3000/users`
-   - **Descrição**: Cria um novo usuário.
-   - **Exemplo de corpo da requisição**:
+- **Endpoint**: `POST http://localhost:3000/users`
+- **Descrição**: Cria um novo usuário.
+- **Exemplo de corpo da requisição**:
 
-     ```json
-     {
-       "email": "usuario@example.com",
-       "nome": "Nome do Usuário"
-     }
-     ```
+  ```json
+  {
+    "email": "usuario@example.com",
+    "nome": "Nome do Usuário"
+  }
+  ```
 
-   - **Resposta de sucesso**:
+- **Resposta de sucesso**:
 
-     ```json
-     {
-       "message": "Usuário criado com sucesso"
-     }
-     ```
+  ```json
+  {
+    "message": "Usuário criado com sucesso"
+  }
+  ```
 
 2. **Listar usuários**
 
-   - **Endpoint**: `GET http://localhost:3000/users`
-   - **Descrição**: Retorna uma lista de todos os usuários.
-   - **Resposta de sucesso**:
+- **Endpoint**: `GET http://localhost:3000/users`
+- **Descrição**: Retorna uma lista de todos os usuários.
+- **Resposta de sucesso**:
 
-     ```json
-     [
-       {
-         "id": "uuid",
-         "email": "usuario@example.com",
-         "name": "Nome do Usuário"
-       }
-     ]
-     ```
+  ```json
+  [
+    {
+      "id": "uuid",
+      "email": "usuario@example.com",
+      "name": "Nome do Usuário"
+    }
+  ]
+  ```
 
 3. **Atualizar um usuário**
 
-   - **Endpoint**: `PUT http://localhost:3000/users/:id`
-   - **Descrição**: Atualiza as informações de um usuário.
-   - **Exemplo de corpo da requisição**:
+- **Endpoint**: `PUT http://localhost:3000/users/:id`
+- **Descrição**: Atualiza as informações de um usuário.
+- **Exemplo de corpo da requisição**:
 
-     ```json
-     {
-       "email": "novoemail@example.com",
-       "nome": "Novo Nome"
-     }
-     ```
+  ```json
+  {
+    "email": "novoemail@example.com",
+    "nome": "Novo Nome"
+  }
+  ```
 
-   - **Resposta de sucesso**:
+- **Resposta de sucesso**:
 
-     ```json
-     {
-       "message": "Usuário atualizado com sucesso"
-     }
-     ```
+  ```json
+  {
+    "message": "Usuário atualizado com sucesso"
+  }
+  ```
 
 4. **Excluir um usuário**
 
-   - **Endpoint**: `DELETE http://localhost:3000/users/users/:id`
-   - **Descrição**: Exclui um usuário.
-   - **Resposta de sucesso**:
+- **Endpoint**: `DELETE http://localhost:3000/users/users/:id`
+- **Descrição**: Exclui um usuário.
+- **Resposta de sucesso**:
 
-     ```json
-     {
-       "message": "Usuário excluído com sucesso"
-     }
-     ```
+  ```json
+  {
+    "message": "Usuário excluído com sucesso"
+  }
+  ```
+
+```
+
+```
