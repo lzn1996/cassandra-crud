@@ -17,8 +17,8 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
    Clone o repositório para sua máquina local:
 
    ```sh
-   git clone <https://github.com/lzn1996/cassandra-crud.git>
-   cd <cassandra-crud>
+   git clone https://github.com/lzn1996/cassandra-crud.git
+   cd cassandra-crud
    ```
 
 2. **Instale as dependências**
@@ -38,6 +38,7 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
    ```
 
 4. **Abra uma segunda aba no terminal**
+
    Agora é preciso conversar com o CQLSH (Cassandra Query Language SHell) para poder criar o KEYSPACE e as Tabelas à serem manipuladas
 
    Use o comando abaixo para conseguir acesso ao CQLSH pela CLI
