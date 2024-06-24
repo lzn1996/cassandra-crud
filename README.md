@@ -52,24 +52,30 @@ Este tutorial irá guiá-lo através das etapas para configurar e executar um CR
 
    Para criar o KEYSPACE, acessar ele e Criar as tabelas (lembre-se do ponto e vírgula), use:
 
-   ```sh
-         CREATE KEYSPACE cass  WITH replication = {'class': 'SimpleStrategy','replication_factor': 1 };
+   ```sql
+   CREATE KEYSPACE cass WITH replication = {'class': 'SimpleStrategy','replication_factor': 1 };
 
-     use cass;
+   use cass;
 
-     CREATE TABLE users (id UUID PRIMARY KEY,email TEXT,name TEXT);
-
+   CREATE TABLE users (id UUID PRIMARY KEY,email TEXT,name TEXT);
    ```
 
-   --- Lembre-se de que o nome de keyspace que vc usar, deverá ser alterado também no index.js
+   Para sair do terminal do `container` digite:
+   ```sh
+   exit
+   ```
+   
+   **Lembre-se de que o nome de keyspace que vc usar, deverá ser alterado também no index.js**
+   ---
+   
 
    Por exemplo se eu criei o keyspace cass, o código deve ser assim:
 
-   ```sh
+   ```js
    const client = new cassandra.Client({
-   contactPoints: ["localhost"],
-   localDataCenter: "datacenter1",
-   keyspace: "cass",                                  // NOME AQUI //
+    contactPoints: ["localhost"],
+    localDataCenter: "datacenter1",
+    keyspace: "cass", // NOME AQUI //
    });
    ```
 
@@ -167,4 +173,5 @@ Atividade feita por
 
 - Luan [Perfil do Luan](https://github.com/lzn1996)
 - Rafael [Perfil do Rafael](https://github.com/rrafaelc)
+- [![Demonstração Rafael](https://img.youtube.com/vi/DD5smMdBNbE/0.jpg)](https://www.youtube.com/watch?v=DD5smMdBNbE)
 - Wendel [Perfil do Wendel](https://github.com/WendelBitencourt)
