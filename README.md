@@ -157,7 +157,7 @@ Crie nova request HTTP, coloque a URL e escolha o método
 
 4. **Excluir um usuário**
 
-- **Endpoint**: `DELETE http://localhost:3000/users/users/:id`
+- **Endpoint**: `DELETE http://localhost:3000/users/:id`
 - **Descrição**: Exclui um usuário.
 - **Resposta de sucesso**:
 
