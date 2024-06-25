@@ -176,5 +176,5 @@ https://youtu.be/6tyva8aNcco
 - Luan [Perfil do Luan](https://github.com/lzn1996)
 - [Demonstração Luan](https://www.youtube.com/watch?v=6tyva8aNcco)
 - Rafael [Perfil do Rafael](https://github.com/rrafaelc)
-- [![Demonstração Rafael](https://img.youtube.com/vi/DD5smMdBNbE/0.jpg)](https://www.youtube.com/watch?v=DD5smMdBNbE)
+- [Demonstração Rafael](https://www.youtube.com/watch?v=DD5smMdBNbE)
 - Wendel [Perfil do Wendel](https://github.com/WendelBitencourt)
