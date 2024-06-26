@@ -1,4 +1,17 @@
-# cassandra-crud
+# Atividade avaliativa II
+Esta é uma atividade avaliativa da disciplina "Banco de dados não relacional", administrada pelo professor "Mateus Guilherme Fuini", da FATEC Itapira - "Ogari Castro Pacheco".
+
+# O que é Apache Cassandra?
+Apache Cassandra é um banco de dados NoSQL distribuído que foi desenvolvido inicialmente pelo Facebook e depois doado para a Apache Foundation. Ele é projetado para lidar com grandes volumes de dados em várias máquinas sem um ponto único de falha, garantindo alta disponibilidade e escalabilidade.
+
+## Principais Características:
+
+* Escalabilidade Linear: Cassandra pode escalar horizontalmente adicionando mais nós ao cluster sem downtime.
+* Alta Disponibilidade: Ele oferece replicação de dados, permitindo que o sistema continue funcionando mesmo se alguns nós falharem.
+* Modelo de Dados Flexível: Utiliza um modelo de dados baseado em tabelas que permite a criação de esquemas dinâmicos.
+* Consistência Configurável: Você pode ajustar o nível de consistência de leitura/escrita para balancear entre consistência e desempenho.
+
+# Cassandra-crud
 
 ## Passo a passo
 
@@ -178,3 +191,4 @@ https://youtu.be/6tyva8aNcco
 - Rafael [Perfil do Rafael](https://github.com/rrafaelc)
 - [Demonstração Rafael](https://www.youtube.com/watch?v=DD5smMdBNbE)
 - Wendel [Perfil do Wendel](https://github.com/WendelBitencourt)
+- [Demonstração Rafael](https://www.youtube.com/watch?v=YIJN1FF_0jw)
