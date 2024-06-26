@@ -191,4 +191,4 @@ https://youtu.be/6tyva8aNcco
 - Rafael [Perfil do Rafael](https://github.com/rrafaelc)
 - [Demonstração Rafael](https://www.youtube.com/watch?v=DD5smMdBNbE)
 - Wendel [Perfil do Wendel](https://github.com/WendelBitencourt)
-- [Demonstração Rafael](https://www.youtube.com/watch?v=YIJN1FF_0jw)
+- [Demonstração Wendel](https://www.youtube.com/watch?v=YIJN1FF_0jw)
